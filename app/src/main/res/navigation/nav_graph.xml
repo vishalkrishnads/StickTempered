@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.vishalds.sticktempered.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_pasteFragment"
+            app:destination="@id/pasteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pasteFragment"
+        android:name="com.vishalds.sticktempered.ui.PasteFragment"
+        android:label="fragment_paste"
+        tools:layout="@layout/fragment_paste">
+        <action
+            android:id="@+id/action_pasteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="brightness"
+            app:argType="integer"
+            android:defaultValue="255" />
+    </fragment>
+</navigation>
