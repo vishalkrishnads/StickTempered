@@ -1,7 +1,7 @@
 package com.vishalds.sticktempered.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -39,7 +38,6 @@ class PasteFragment : Fragment() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onResume() {
         super.onResume()
         setSelectedBrightness()
@@ -57,7 +55,6 @@ class PasteFragment : Fragment() {
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setSelectedBrightness()
@@ -66,7 +63,6 @@ class PasteFragment : Fragment() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onPause() {
         super.onPause()
         setDefaultBrightness()
@@ -75,23 +71,22 @@ class PasteFragment : Fragment() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
+        super.onDestroy()
         setDefaultBrightness()
         activity?.window?.decorView?.apply {
             systemUiVisibility = View.VISIBLE
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
+    @SuppressLint("NewApi")
     private fun setSelectedBrightness() {
         activity?.applicationContext.let {
             if (Settings.System.canWrite(it)) it?.setBrightness(viewModel.currentBrightness)
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
+    @SuppressLint("NewApi")
     private fun setDefaultBrightness() {
         activity?.applicationContext.let {
             if (Settings.System.canWrite(it)) it?.setBrightness(viewModel.defaultBrightness)
@@ -99,7 +94,7 @@ class PasteFragment : Fragment() {
     }
 }
 
-fun Context.setBrightness(value: Int): Unit {
+fun Context.setBrightness(value: Int) {
     Settings.System.putInt(
         this.contentResolver,
         Settings.System.SCREEN_BRIGHTNESS,

@@ -3,7 +3,7 @@ package com.vishalds.sticktempered.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import java.lang.Math.round
+import kotlin.math.roundToInt
 
 class TemperedViewModel : ViewModel() {
 
@@ -29,7 +29,7 @@ class TemperedViewModel : ViewModel() {
             _percentage.value = brightness
         } else {
             _currentBrightness = brightness
-            _percentage.value = round((brightness.toDouble() / 255) * 100).toInt()
+            _percentage.value = ((brightness.toDouble() / 255) * 100).roundToInt()
         }
     }
 
