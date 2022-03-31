@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.vishalds.sticktempered.ui.TemperedViewModel" />
+    </data>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:flexWrap="wrap"
+        app:alignItems="stretch"
+        app:alignContent="stretch"
+        app:flexDirection="column"
+        tools:context=".ui.HomeFragment">
+
+        <com.google.android.flexbox.FlexboxLayout
+            app:layout_flexBasisPercent="15%"
+            android:layout_height="120dp"
+            android:layout_width="80dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_flexBasisPercent="5%" />
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/noto_sans"
+                android:gravity="bottom"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_flexBasisPercent="90%"
+                tools:text="@string/app_name" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_flexBasisPercent="5%" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            app:layout_flexBasisPercent="35%"
+            android:layout_height="0dp"
+            android:layout_width="80dp"
+            app:alignItems="center"
+            app:justifyContent="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/go_button"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="@string/start"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="@string/start" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            app:layout_flexBasisPercent="40%"
+            android:layout_height="0dp"
+            android:layout_width="80dp"
+            app:flexDirection="column">
+
+            <com.google.android.flexbox.FlexboxLayout
+                app:layout_flexBasisPercent="30%"
+                android:layout_height="0dp"
+                android:layout_width="match_parent">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_flexBasisPercent="10%" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_flexBasisPercent="80%"
+                    app:flexDirection="column">
+
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_flexBasisPercent="40%">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/noto_sans"
+                            android:gravity="bottom"
+                            android:text="@string/brightness_label"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textStyle="bold"
+                            app:layout_flexBasisPercent="85%"
+                            tools:text="@string/brightness_label" />
+
+                        <TextView
+                            android:id="@+id/brightness_value"
+                            android:text="@{@string/percentage(viewModel.percentage)}"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/noto_sans"
+                            android:gravity="bottom"
+                            android:textAlignment="textEnd"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_flexBasisPercent="25%"
+                            tools:text="0%" />
+                    </com.google.android.flexbox.FlexboxLayout>
+
+                    <SeekBar
+                        android:id="@+id/brightness"
+                        android:progress="@{viewModel.percentage}"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:indeterminate="false"
+                        android:visibility="gone"
+                        android:max="100"
+                        app:layout_flexBasisPercent="50%" />
+
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:id="@+id/permissions_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        app:layout_flexBasisPercent="60%"
+                        app:justifyContent="center"
+                        app:alignItems="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/permissions"
+                            android:text="@string/permission"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.flexbox.FlexboxLayout>
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_flexBasisPercent="10%" />
+            </com.google.android.flexbox.FlexboxLayout>
+
+            <com.google.android.flexbox.FlexboxLayout
+                app:layout_flexBasisPercent="30%"
+                android:layout_height="0dp"
+                android:layout_width="match_parent">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_flexBasisPercent="10%" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_flexBasisPercent="80%"
+                    app:flexDirection="column">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:fontFamily="@font/noto_sans"
+                        android:gravity="bottom"
+                        android:text="@string/background_color"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textStyle="bold"
+                        app:layout_flexBasisPercent="40%"
+                        tools:text="@string/background_color" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:fontFamily="@font/noto_sans"
+                        android:text="@string/coming"
+                        app:layout_flexBasisPercent="60%"
+                        tools:text="@string/coming" />
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_flexBasisPercent="10%" />
+            </com.google.android.flexbox.FlexboxLayout>
+
+            <com.google.android.flexbox.FlexboxLayout
+                app:layout_flexBasisPercent="40%"
+                android:layout_height="0dp"
+                android:layout_width="match_parent" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/caption"
+            android:textAlignment="center"
+            app:layout_flexBasisPercent="10%"
+            tools:text="@string/caption" />
+    </com.google.android.flexbox.FlexboxLayout>
+</layout>

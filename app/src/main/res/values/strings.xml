@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">StickTempered</string>
+    <string name="brightness_label">Screen brightness</string>
+    <string name="permission">Grant permissions</string>
+    <string name="background_color">Background color</string>
+    <string name="start">Let\'s go</string>
+    <string name="coming">Coming soon</string>
+    <string name="caption">Made with love for open source</string>
+    <string name="finished">Finished</string>
+    <string name="patience">Take your time</string>
+    <string name="paste_info">When you finish applying your screen protector, and become comfortable enough, click finish. The screen will stay awake till you finish.</string>
+    <string name="percentage">%s</string>
+</resources>
