@@ -5,6 +5,9 @@ start applying it, all to suddenly realise that you're struggling to find out th
 screen? Well, what if there was an app that would keep the screen turned ON until you finish, but
 make it unresponsive to unwanted touches? That is what StickTempered aims to achieve.
 
+<a><img src="https://github.com/vishalkrishnads/StickTempered/blob/main/.github/Screenshots/ss1.jpg?raw=true" height="420" width="200" ></a>
+<a><img src="https://github.com/vishalkrishnads/StickTempered/blob/main/.github/Screenshots/ss2.jpg?raw=true" height="420" width="200" ></a>
+
 ## How to use
 
 Pretty simple, just download the APK from the releases page and install.
