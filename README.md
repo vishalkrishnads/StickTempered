@@ -1,6 +1,6 @@
 # StickTempered
 
-Have you ever been in that moment when you take out your new screen tempered from the packaging,
+Have you ever been in that moment when you take out your new screen protector from the packaging,
 start applying it, all to suddenly realise that you're struggling to find out the edges of your
 screen? Well, what if there was an app that would keep the screen turned ON until you finish, but
 make it unresponsive to unwanted touches? That is what StickTempered aims to achieve.
